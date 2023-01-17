@@ -78,8 +78,8 @@ function createApp(database) {
 
   function isMonday(date) {
     let d = date.toTemporalInstant();
-    let d2 = d.dayOfWeek === 1;
-    
+    let d2 = d.dayOfWeek;
+
     return date.getDay() === 1;
   }
 
