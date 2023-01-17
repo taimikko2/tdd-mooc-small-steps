@@ -77,7 +77,6 @@ function createApp(database) {
   }
 
   function isMonday(date) {
-    let d2= Temporal.PlainDate.from({ year: 2021, month: 3, day: 8 })
     let d = date.toTemporalInstant();
     return date.getDay() === 1;
   }
