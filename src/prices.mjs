@@ -28,7 +28,7 @@ function createApp(database) {
   function parseDate(dateString) {
     if (dateString) {
       const d = Temporal.PlainDate.from(dateString);
-      return new Date(dateString);
+      return d;
     }
   }
 
@@ -72,7 +72,7 @@ function createApp(database) {
 
   function calculateReduction(date) {
     let reduction = 0;
-    if (date && isMonday(date.toTemporalInstant().toZonedDateTimeISO(Temporal.Now.timeZone()).toPlainDate()) && !isHoliday(date.toTemporalInstant().toZonedDateTimeISO(Temporal.Now.timeZone()).toPlainDate())) {
+    if (date && isMonday(date) && !isHoliday(date)) {
       reduction = 35;
     }
     return reduction;
