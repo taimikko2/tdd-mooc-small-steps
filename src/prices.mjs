@@ -80,7 +80,7 @@ function createApp(database) {
     let d = date.toTemporalInstant().toZonedDateTimeISO(Temporal.Now.timeZone()).toPlainDate();
     let d2 = d.dayOfWeek;
 
-    return date.getDay() === 1;
+    return d.dayOfWeek === 1;
   }
 
   function isHoliday(date) {
