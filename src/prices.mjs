@@ -71,14 +71,14 @@ function createApp(database) {
   function calculateReduction(date) {
     let reduction = 0;
     //     const d = date.toTemporalInstant().toZonedDateTimeISO(Temporal.Now.timeZone()).toPlainDate();
-    if (date && isMonday(date) && !isHoliday(date)) {
+    if (date && isMonday(date.toTemporalInstant().toZonedDateTimeISO(Temporal.Now.timeZone()).toPlainDate()) && !isHoliday(date)) {
       reduction = 35;
     }
     return reduction;
   }
 
   function isMonday(date) {
-    return date.toTemporalInstant().toZonedDateTimeISO(Temporal.Now.timeZone()).toPlainDate().dayOfWeek === 1;
+    return date.dayOfWeek === 1;
   }
 
   function isHoliday(date) {
