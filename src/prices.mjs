@@ -79,7 +79,6 @@ function createApp(database) {
   function isMonday(date) {
     let d = date.toTemporalInstant().toZonedDateTimeISO(Temporal.Now.timeZone()).toPlainDate();
     let d2 = d.dayOfWeek;
-
     return d.dayOfWeek === 1;
   }
 
