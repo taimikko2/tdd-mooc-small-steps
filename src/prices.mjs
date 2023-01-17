@@ -88,7 +88,7 @@ function createApp(database) {
       let holiday = h;
       if (
         date &&
-        date.year === h.year &&
+        date.year === holiday.year &&
         date.month === h.month &&
         date.day === h.day
       ) {
