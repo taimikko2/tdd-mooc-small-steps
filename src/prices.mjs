@@ -70,7 +70,6 @@ function createApp(database) {
 
   function calculateReduction(date) {
     let reduction = 0;
-    //     const d = date.toTemporalInstant().toZonedDateTimeISO(Temporal.Now.timeZone()).toPlainDate();
     if (date && isMonday(date.toTemporalInstant().toZonedDateTimeISO(Temporal.Now.timeZone()).toPlainDate()) && !isHoliday(date.toTemporalInstant().toZonedDateTimeISO(Temporal.Now.timeZone()).toPlainDate())) {
       reduction = 35;
     }
