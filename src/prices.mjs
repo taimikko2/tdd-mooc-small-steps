@@ -90,7 +90,7 @@ function createApp(database) {
         date &&
         date.year === holiday.year &&
         date.month === holiday.month &&
-        date.day === h.day
+        date.day === holiday.day
       ) {
         return true;
       }
