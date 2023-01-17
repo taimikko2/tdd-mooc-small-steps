@@ -85,7 +85,7 @@ function createApp(database) {
     const holidays = database.getHolidays();
     for (let row of holidays) {
       let holiday = new Date(row.holiday);
-      let h = holiday.toTemporalInstant().toZonedDateTimeISO(Temporal.Now.timeZone()).toPlainDate();
+      let h = Temporal.PlainDate.from(row.holiday);
       if (
         date &&
         date.year === h.year &&
