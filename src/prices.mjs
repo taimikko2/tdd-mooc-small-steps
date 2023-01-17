@@ -77,6 +77,7 @@ function createApp(database) {
   }
 
   function isMonday(date) {
+    // let d2= Temporal.PlainDate.from(date)
     let d = date;
     return date.getDay() === 1;
   }
