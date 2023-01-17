@@ -71,7 +71,7 @@ function createApp(database) {
   function calculateReduction(date) {
     let reduction = 0;
     //     const d = date.toTemporalInstant().toZonedDateTimeISO(Temporal.Now.timeZone()).toPlainDate();
-    if (date && isMonday(date.toTemporalInstant().toZonedDateTimeISO(Temporal.Now.timeZone()).toPlainDate()) && !isHoliday(date)) {
+    if (date && isMonday(date.toTemporalInstant().toZonedDateTimeISO(Temporal.Now.timeZone()).toPlainDate()) && !isHoliday(date.toTemporalInstant().toZonedDateTimeISO(Temporal.Now.timeZone()).toPlainDate())) {
       reduction = 35;
     }
     return reduction;
@@ -82,7 +82,7 @@ function createApp(database) {
   }
 
   function isHoliday(date) {
-    const d = date.toTemporalInstant().toZonedDateTimeISO(Temporal.Now.timeZone()).toPlainDate();
+    const d = date;
     const holidays = database.getHolidays();
     for (let row of holidays) {
       let holiday = new Date(row.holiday);
